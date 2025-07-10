@@ -1,3 +1,4 @@
+import React from "react";
 import axios from "../../api/axiosconfig";
 import { loaduser, removeuser } from "../reducers/userSlice";
 
@@ -37,6 +38,28 @@ export const asyncregisteruser = (user) => async (dispatch, getState) => {
   try {
     const res = await axios.post("/users", user);
     console.log(res);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const asyncupdateuser = (id, user) => async (dispatch, getState) => {
+  try {
+    const {data} = await axios.patch("/users/" +id, user);
+    console.log(data);
+    
+   localStorage.setItem("user", JSON.stringify(data));
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
+export const asyncdeleteuser = (id) => async (dispatch, getState) => {
+  try {
+    await axios.delete("/users/" + id);
+    dispatch(asynclogoutuser());
+    
   } catch (error) {
     console.log(error);
   }

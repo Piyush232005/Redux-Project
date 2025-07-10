@@ -1,23 +1,31 @@
-import { useEffect } from "react"
-import Nav from "./components/Nav"
-import Mainroutes from "./routes/Mainroutes"
-import { asynccurrentuser } from "./store/actions/userActions"
-import { useDispatch } from "react-redux"
-import { asyncloadproducts } from "./store/actions/ProductActions"
+import { useEffect } from "react";
+import Nav from "./components/Nav";
+import Mainroutes from "./routes/Mainroutes";
+import { asynccurrentuser } from "./store/actions/userActions";
+import { useDispatch } from "react-redux";
+import { asyncloadproducts } from "./store/actions/ProductActions";
 
 const App = () => {
   const dispatch = useDispatch();
-  useEffect(() =>{
+
+  useEffect(() => {
     dispatch(asynccurrentuser());
     dispatch(asyncloadproducts());
-  })
+  }, [dispatch]); // ✅ Added dependency array
 
   return (
-    <div className='w-screen h-screen px-[10%] bg-gray-900 text-2xl text-amber-100 overflow-auto'>
-      <Nav/>
-      <Mainroutes/>
-    </div>
-  )
-}
+    <div className="min-h-screen w-full bg-gradient-to-b from-gray-900 to-gray-800 text-amber-100 overflow-auto">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Navigation */}
+        <Nav />
 
-export default App
+        {/* Page content */}
+        <main className="py-6 text-lg sm:text-xl">
+          <Mainroutes />
+        </main>
+      </div>
+    </div>
+  );
+};
+
+export default App;

@@ -1,39 +1,11 @@
 {
   "users": [
     {
-      "id": "-xJFYfJuBPxr6m8MDxBq6",
+      "id": "1",
       "username": "piyush232005",
       "email": "pmherwal@gmail.com",
       "password": "123456",
       "isAdmin": true
-    },
-    {
-      "id": "8U69Su13Nd0b2tutbk8r1",
-      "username": "rahul ",
-      "email": "Rahul@gmail.com",
-      "password": "lakshaybvajhd",
-      "isAdmin": false
-    },
-    {
-      "id": "_IIEk0Arf90Dgzf59mBx6",
-      "username": "",
-      "email": "",
-      "password": "",
-      "isAdmin": false
-    },
-    {
-      "id": "O1Nju1-cKx6ADH_u1b3h5",
-      "username": "piyush232005",
-      "email": "pmherwal@gmail.com",
-      "password": "123456",
-      "isAdmin": false
-    },
-    {
-      "id": "TUrOU4LvNLMz-kEFHyrAB",
-      "username": "raju2323",
-      "email": "raju@gmail.com",
-      "password": "123456",
-      "isAdmin": false
     }
   ],
   "products": [
